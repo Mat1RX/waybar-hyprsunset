@@ -20,7 +20,7 @@ A lightweight Bash utility to manage screen color temperature in **Hyprland** us
 1. Create the script file:
 ```bash
 mkdir -p ~/.config/hypr/scripts
-nano ~/.config/hypr/scripts/sunset.sh
+wget -O ~/.config/hypr/scripts/sunset.sh https://raw.githubusercontent.com/Mat1RX/waybar-hyprsunset/refs/heads/main/sunset.sh
 
 ```
 
@@ -72,8 +72,8 @@ Add these to your `hyprland.conf` to control the temperature with your keyboard.
 
 ```ini
 # Adjust temperature with Shift + BrightnessDown/Up
-bindel = SHIFT, XF86MonBrightnessDown, exec, hyprctl hyprsunset temperature -500 && pkill -RTMIN+8 waybar
-bindel = SHIFT, XF86MonBrightnessUp, exec, hyprctl hyprsunset temperature +500 && pkill -RTMIN+8 waybar
+bindel = SHIFT, XF86MonBrightnessDown, exec, hyprctl hyprsunset temperature -500 && pkill -RTMIN+10 waybar
+bindel = SHIFT, XF86MonBrightnessUp, exec, hyprctl hyprsunset temperature +500 && pkill -RTMIN+10 waybar
 
 # Reset to 6000K
 bind = SUPER, Home, exec, ~/.config/hypr/scripts/sunset.sh reset && pkill -RTMIN+10 waybar
